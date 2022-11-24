@@ -1,5 +1,5 @@
 
-let connection;
+let connection; // Stores the active TCP connection object.
 const setupInput = function (conn) {
 
     connection = conn;
@@ -16,16 +16,16 @@ const setupInput = function (conn) {
       if (data === '\u0003') { // ctrl-c
         process.exit();
       }
-      if (data === '\u001b[A') {
+      if (data === 'w') { //"Move: up"
         connection.write("Move: up");
       };
-      if (data === '\u001b[D') {
+      if (data === 'a') { //"Move: left"
         connection.write("Move: left");
       };
-      if (data === '\u001b[B') {
+      if (data === 's') { //"Move: down"
         connection.write("Move: down");
       };
-      if (data === '\u001b[C') {
+      if (data === 'd') { //"Move: right"
         connection.write("Move: right");
       };
     };
