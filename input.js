@@ -28,6 +28,12 @@ const setupInput = function (conn) {
       if (data === 'd') { //"Move: right"
         connection.write("Move: right");
       };
+      if (data === "m") { //Sending Messages
+        connection.write("Say: Gooooooo");
+      };
+      if (data === "f") {
+        connection.write("Say: Fire! FIRE!");
+      };
     };
 
     module.exports = { setupInput };
